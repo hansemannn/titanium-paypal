@@ -1,0 +1,2 @@
+
+OTHER_LDFLAGS=$(inherited) -framework Accelerate -framework AudioToolbox -framework AVFoundation -framework CoreLocation -framework CoreMedia -framework MessageUI -framework MobileCoreServices -framework SystemConfiguration -framework SafariServices

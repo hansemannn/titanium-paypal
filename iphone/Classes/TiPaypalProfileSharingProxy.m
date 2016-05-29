@@ -5,10 +5,10 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "TiPaypalProfileSharing.h"
+#import "TiPaypalProfileSharingProxy.h"
 #import "TiApp.h"
 
-@implementation TiPaypalProfileSharing
+@implementation TiPaypalProfileSharingProxy
 
 -(NSMutableArray*)scopes
 {
@@ -51,7 +51,7 @@
 
 -(void)setConfiguration:(id)value
 {
-    ENSURE_TYPE(value, TiPayPalConfiguration);
+    ENSURE_TYPE(value, TiPaypalConfigurationProxy);
     configuration = value;
 }
 

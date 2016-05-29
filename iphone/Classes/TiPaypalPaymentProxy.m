@@ -5,17 +5,20 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "TiPaypalPayment.h"
+#import "TiPaypalPaymentProxy.h"
+#import "TiPaypalPaymentItemProxy.h"
 #import "TiUtils.h"
 #import "TiApp.h"
 
-@implementation TiPaypalPayment
+@implementation TiPaypalPaymentProxy
 
 -(PayPalPayment *)payment
 {
     if (payment == nil) {
         payment = [PayPalPayment new];
     }
+    
+    return payment;
 }
 
 -(void)show:(id)args
@@ -23,14 +26,14 @@
     NSNumber *animated;
     ENSURE_ARG_FOR_KEY(animated, args, @"animated", NSNumber);
     
+    PayPalPaymentViewController *paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:[self payment]
+                                                                                                configuration:configuration.configuration
+                                                                                                     delegate:self];
+    
     if (![payment processable]) {
         NSLog(@"[ERROR] Ti.PayPal: Payment is not processable, dialog aborted!");
         return;
     }
-    
-    PayPalPaymentViewController *paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
-                                                                                                configuration:configuration.configuration
-                                                                                                     delegate:self];
 
     [[[[TiApp app] controller] topPresentedController] presentViewController:paymentViewController
                                                                     animated:[TiUtils boolValue:animated def:YES]
@@ -39,8 +42,46 @@
 
 -(void)setConfiguration:(id)value
 {
-    ENSURE_TYPE(value, TiPayPalConfiguration);
+    ENSURE_TYPE(value, TiPaypalConfigurationProxy);
     configuration = value;
+}
+
+-(void)setItemss:(id)value
+{
+    ENSURE_TYPE(value, NSArray);
+    NSMutableArray *result = [NSMutableArray new];
+    
+    for (id item in (NSArray*)value) {
+        ENSURE_TYPE(item, TiPaypalPaymentItemProxy);
+        TiPaypalPaymentItemProxy *proxy = (TiPaypalPaymentItemProxy*)item;
+        [result addObject:[proxy item]];
+    }
+
+   [[self payment] setItems:result];
+}
+
+-(void)setCurrencyCode:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setCurrencyCode:[TiUtils stringValue:value]];
+}
+
+-(void)setAmount:(id)value
+{
+    ENSURE_TYPE(value, NSNumber);
+    [[self payment] setAmount:[NSDecimalNumber decimalNumberWithDecimal:[[TiUtils numberFromObject:value] decimalValue]]];
+}
+
+-(void)setShortDescription:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setShortDescription:[TiUtils stringValue:value]];
+}
+
+-(void)setIntent:(id)value
+{
+    ENSURE_TYPE(value, NSNumber);
+    [[self payment] setIntent:[TiUtils intValue:value def:PayPalPaymentIntentSale]];
 }
 
 #pragma mark - Delegates

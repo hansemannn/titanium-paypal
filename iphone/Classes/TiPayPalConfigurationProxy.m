@@ -5,10 +5,10 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "TiPayPalConfiguration.h"
+#import "TiPaypalConfigurationProxy.h"
 #import "TiUtils.h"
 
-@implementation TiPayPalConfiguration
+@implementation TiPaypalConfigurationProxy
 
 -(PayPalConfiguration *)configuration
 {
@@ -17,7 +17,7 @@
         
         // TODO: Map all properties to public API
         configuration.acceptCreditCards = NO;                
-        configuration.payPalShippingAddressOption = PayPalShippingAddressOptionPayPal;
+        configuration.payPalShippingAddressOption = PayPalShippingAddressOptionNone;
     }
     
     return configuration;

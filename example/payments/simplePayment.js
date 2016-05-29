@@ -1,7 +1,7 @@
 
 var PayPal = require('ti.paypal');
 
-var item1 = PayPal.createItem({
+var item1 = PayPal.createPaymentItem({
 	name: "My item",
 	price: 23.99,
 	sku: "my-item",
@@ -21,7 +21,7 @@ var payment = PayPal.createPayment({
 	currencyCode: "USD",
 	amount: 23.99,
 	shortDescription: "Your shopping trip at FooBar",
-	intent: PayPal.PAYMENT_INTENT_SALE
+	intent: PayPal.PAYMENT_INTENT_SALE,
 	// Optional
 	items: [item1]
 });

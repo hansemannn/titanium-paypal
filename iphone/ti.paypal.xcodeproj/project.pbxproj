@@ -43,16 +43,16 @@
 		3AB250AA1CFB6EEE00D892FF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB250A31CFB6EEE00D892FF /* MobileCoreServices.framework */; };
 		3AB250AB1CFB6EEE00D892FF /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB250A41CFB6EEE00D892FF /* SafariServices.framework */; };
 		3AB250AC1CFB6EEE00D892FF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB250A51CFB6EEE00D892FF /* SystemConfiguration.framework */; };
-		3AB250AF1CFB742F00D892FF /* TiPaypalPaymentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItem.h */; };
-		3AB250B01CFB742F00D892FF /* TiPaypalPaymentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItem.m */; };
-		3AB250B51CFB768900D892FF /* TiPaypalPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250B31CFB768900D892FF /* TiPaypalPayment.h */; };
-		3AB250B61CFB768900D892FF /* TiPaypalPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250B41CFB768900D892FF /* TiPaypalPayment.m */; };
-		3AB250BA1CFB778A00D892FF /* TiPayPalConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250B81CFB778A00D892FF /* TiPayPalConfiguration.h */; };
-		3AB250BB1CFB778A00D892FF /* TiPayPalConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250B91CFB778A00D892FF /* TiPayPalConfiguration.m */; };
-		3AB250BF1CFB7C8500D892FF /* TiPaypalFuturePayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePayment.h */; };
+		3AB250AF1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h */; };
+		3AB250B01CFB742F00D892FF /* TiPaypalPaymentItemProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItemProxy.m */; };
+		3AB250B51CFB768900D892FF /* TiPaypalPaymentProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250B31CFB768900D892FF /* TiPaypalPaymentProxy.h */; };
+		3AB250B61CFB768900D892FF /* TiPaypalPaymentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250B41CFB768900D892FF /* TiPaypalPaymentProxy.m */; };
+		3AB250BA1CFB778A00D892FF /* TiPaypalConfigurationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250B81CFB778A00D892FF /* TiPaypalConfigurationProxy.h */; };
+		3AB250BB1CFB778A00D892FF /* TiPaypalConfigurationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250B91CFB778A00D892FF /* TiPaypalConfigurationProxy.m */; };
+		3AB250BF1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h */; };
 		3AB250C01CFB7C8500D892FF /* TiPaypalFuturePayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250BE1CFB7C8500D892FF /* TiPaypalFuturePayment.m */; };
-		3AB250C41CFB7D6C00D892FF /* TiPaypalProfileSharing.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharing.h */; };
-		3AB250C51CFB7D6C00D892FF /* TiPaypalProfileSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharing.m */; };
+		3AB250C41CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h */; };
+		3AB250C51CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.m */; };
 		AA747D9F0F9514B9006C5449 /* TiPaypal_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiPaypal_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -90,16 +90,16 @@
 		3AB250A31CFB6EEE00D892FF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3AB250A41CFB6EEE00D892FF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		3AB250A51CFB6EEE00D892FF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalPaymentItem.h; path = Classes/TiPaypalPaymentItem.h; sourceTree = "<group>"; };
-		3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalPaymentItem.m; path = Classes/TiPaypalPaymentItem.m; sourceTree = "<group>"; };
-		3AB250B31CFB768900D892FF /* TiPaypalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalPayment.h; path = Classes/TiPaypalPayment.h; sourceTree = "<group>"; };
-		3AB250B41CFB768900D892FF /* TiPaypalPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalPayment.m; path = Classes/TiPaypalPayment.m; sourceTree = "<group>"; };
-		3AB250B81CFB778A00D892FF /* TiPayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPayPalConfiguration.h; path = Classes/TiPayPalConfiguration.h; sourceTree = "<group>"; };
-		3AB250B91CFB778A00D892FF /* TiPayPalConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPayPalConfiguration.m; path = Classes/TiPayPalConfiguration.m; sourceTree = "<group>"; };
-		3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalFuturePayment.h; path = Classes/TiPaypalFuturePayment.h; sourceTree = "<group>"; };
+		3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalPaymentItemProxy.h; path = Classes/TiPaypalPaymentItemProxy.h; sourceTree = "<group>"; };
+		3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItemProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalPaymentItemProxy.m; path = Classes/TiPaypalPaymentItemProxy.m; sourceTree = "<group>"; };
+		3AB250B31CFB768900D892FF /* TiPaypalPaymentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalPaymentProxy.h; path = Classes/TiPaypalPaymentProxy.h; sourceTree = "<group>"; };
+		3AB250B41CFB768900D892FF /* TiPaypalPaymentProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalPaymentProxy.m; path = Classes/TiPaypalPaymentProxy.m; sourceTree = "<group>"; };
+		3AB250B81CFB778A00D892FF /* TiPaypalConfigurationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalConfigurationProxy.h; path = Classes/TiPaypalConfigurationProxy.h; sourceTree = "<group>"; };
+		3AB250B91CFB778A00D892FF /* TiPaypalConfigurationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalConfigurationProxy.m; path = Classes/TiPaypalConfigurationProxy.m; sourceTree = "<group>"; };
+		3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalFuturePaymentProxy.h; path = Classes/TiPaypalFuturePaymentProxy.h; sourceTree = "<group>"; };
 		3AB250BE1CFB7C8500D892FF /* TiPaypalFuturePayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalFuturePayment.m; path = Classes/TiPaypalFuturePayment.m; sourceTree = "<group>"; };
-		3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalProfileSharing.h; path = Classes/TiPaypalProfileSharing.h; sourceTree = "<group>"; };
-		3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalProfileSharing.m; path = Classes/TiPaypalProfileSharing.m; sourceTree = "<group>"; };
+		3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalProfileSharingProxy.h; path = Classes/TiPaypalProfileSharingProxy.h; sourceTree = "<group>"; };
+		3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalProfileSharingProxy.m; path = Classes/TiPaypalProfileSharingProxy.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TiPaypal_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiPaypal_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTiPaypal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiPaypal.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,8 +208,8 @@
 		3AB250B11CFB743B00D892FF /* Payment Item */ = {
 			isa = PBXGroup;
 			children = (
-				3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItem.h */,
-				3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItem.m */,
+				3AB250AD1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h */,
+				3AB250AE1CFB742F00D892FF /* TiPaypalPaymentItemProxy.m */,
 			);
 			name = "Payment Item";
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 		3AB250B71CFB768D00D892FF /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				3AB250B31CFB768900D892FF /* TiPaypalPayment.h */,
-				3AB250B41CFB768900D892FF /* TiPaypalPayment.m */,
+				3AB250B31CFB768900D892FF /* TiPaypalPaymentProxy.h */,
+				3AB250B41CFB768900D892FF /* TiPaypalPaymentProxy.m */,
 			);
 			name = Payment;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 		3AB250BC1CFB778E00D892FF /* Payment Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				3AB250B81CFB778A00D892FF /* TiPayPalConfiguration.h */,
-				3AB250B91CFB778A00D892FF /* TiPayPalConfiguration.m */,
+				3AB250B81CFB778A00D892FF /* TiPaypalConfigurationProxy.h */,
+				3AB250B91CFB778A00D892FF /* TiPaypalConfigurationProxy.m */,
 			);
 			name = "Payment Configuration";
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 		3AB250C11CFB7C8A00D892FF /* Future Payment */ = {
 			isa = PBXGroup;
 			children = (
-				3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePayment.h */,
+				3AB250BD1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h */,
 				3AB250BE1CFB7C8500D892FF /* TiPaypalFuturePayment.m */,
 			);
 			name = "Future Payment";
@@ -244,8 +244,8 @@
 		3AB250C61CFB7D6F00D892FF /* Profile Sharing */ = {
 			isa = PBXGroup;
 			children = (
-				3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharing.h */,
-				3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharing.m */,
+				3AB250C21CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h */,
+				3AB250C31CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.m */,
 			);
 			name = "Profile Sharing";
 			sourceTree = "<group>";
@@ -261,16 +261,16 @@
 				3AB250991CFB6E6E00D892FF /* PayPalPaymentViewController.h in Headers */,
 				3AB250961CFB6E6E00D892FF /* PayPalMobile.h in Headers */,
 				3AB250981CFB6E6E00D892FF /* PayPalPayment.h in Headers */,
-				3AB250BA1CFB778A00D892FF /* TiPayPalConfiguration.h in Headers */,
-				3AB250C41CFB7D6C00D892FF /* TiPaypalProfileSharing.h in Headers */,
+				3AB250BA1CFB778A00D892FF /* TiPaypalConfigurationProxy.h in Headers */,
+				3AB250C41CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h in Headers */,
 				24DD6CF91134B3F500162E58 /* TiPaypalModule.h in Headers */,
-				3AB250BF1CFB7C8500D892FF /* TiPaypalFuturePayment.h in Headers */,
-				3AB250B51CFB768900D892FF /* TiPaypalPayment.h in Headers */,
+				3AB250BF1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h in Headers */,
+				3AB250B51CFB768900D892FF /* TiPaypalPaymentProxy.h in Headers */,
 				3AB250951CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h in Headers */,
 				3AB250941CFB6E6E00D892FF /* PayPalConfiguration.h in Headers */,
 				3AB2509A1CFB6E6E00D892FF /* PayPalProfileSharingViewController.h in Headers */,
 				3AB250971CFB6E6E00D892FF /* PayPalOAuthScopes.h in Headers */,
-				3AB250AF1CFB742F00D892FF /* TiPaypalPaymentItem.h in Headers */,
+				3AB250AF1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiPaypalModuleAssets.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,12 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB250B01CFB742F00D892FF /* TiPaypalPaymentItem.m in Sources */,
+				3AB250B01CFB742F00D892FF /* TiPaypalPaymentItemProxy.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* TiPaypalModule.m in Sources */,
-				3AB250B61CFB768900D892FF /* TiPaypalPayment.m in Sources */,
+				3AB250B61CFB768900D892FF /* TiPaypalPaymentProxy.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* TiPaypalModuleAssets.m in Sources */,
-				3AB250BB1CFB778A00D892FF /* TiPayPalConfiguration.m in Sources */,
-				3AB250C51CFB7D6C00D892FF /* TiPaypalProfileSharing.m in Sources */,
+				3AB250BB1CFB778A00D892FF /* TiPaypalConfigurationProxy.m in Sources */,
+				3AB250C51CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.m in Sources */,
 				3AB250C01CFB7C8500D892FF /* TiPaypalFuturePayment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

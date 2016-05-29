@@ -6,15 +6,11 @@
  */
 #import "TiProxy.h"
 #import "PayPalMobile.h"
-#import "TiPayPalConfiguration.h"
 
-@interface TiPaypalProfileSharing : TiProxy <PayPalProfileSharingDelegate> {
-    TiPayPalConfiguration *configuration;
-    NSMutableArray *scopes;
+@interface TiPaypalConfigurationProxy : TiProxy {
+    PayPalConfiguration *configuration;
 }
 
--(NSMutableArray*)scopes;
-
--(void)show:(id)args;
+-(PayPalConfiguration*)configuration;
 
 @end

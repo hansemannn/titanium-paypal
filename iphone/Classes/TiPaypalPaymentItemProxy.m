@@ -5,12 +5,12 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "TiPaypalPaymentItem.h"
+#import "TiPaypalPaymentItemProxy.h"
 #import "TiUtils.h"
 
-@implementation TiPaypalPaymentItem
+@implementation TiPaypalPaymentItemProxy
 
--(PayPalItem *)item
+-(PayPalItem*)item
 {
     if (item == nil) {
         item = [PayPalItem new];

@@ -5,10 +5,10 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "TiPaypalFuturePayment.h"
+#import "TiPaypalFuturePaymentProxy.h"
 #import "TiApp.h"
 
-@implementation TiPaypalFuturePayment
+@implementation TiPaypalFuturePaymentProxy
 
 #pragma mark Public APIs
 
@@ -28,7 +28,7 @@
 
 -(void)setConfiguration:(id)value
 {
-    ENSURE_TYPE(value, TiPayPalConfiguration);
+    ENSURE_TYPE(value, TiPaypalConfigurationProxy);
     configuration = value;
 }
 

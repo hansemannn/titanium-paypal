@@ -6,13 +6,11 @@
  */
 #import "TiProxy.h"
 #import "PayPalMobile.h"
-#import "TiPayPalConfiguration.h"
 
-@interface TiPaypalFuturePayment : TiProxy <PayPalFuturePaymentDelegate> {
-    TiPayPalConfiguration *configuration;
-    PayPalPayment *payment;
+@interface TiPaypalPaymentItemProxy : TiProxy {
+    PayPalItem *item;
 }
 
--(void)show:(id)args;
+-(PayPalItem*)item;
 
 @end

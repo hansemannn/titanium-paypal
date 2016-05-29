@@ -41,6 +41,9 @@
  */
 - (void)initialize:(id)args
 {
+    ENSURE_TYPE(args, NSArray);
+    args = [args objectAtIndex:0];
+    
     NSString *clientIdProduction;
     NSString *clientIdSandbox;
     NSString *environment;

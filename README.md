@@ -126,7 +126,6 @@ payment.show();
 ```
 
 #### Profile Sharing
-> Note: This API is currently work in progress!
 Profile sharing is used to share a user profile by defining different scopes that can be authorized. Available Scopes:
 
 - [x] SCOPE_FUTURE_PAYMENTS

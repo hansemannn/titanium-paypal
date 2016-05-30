@@ -10,7 +10,7 @@
 
 @interface TiPaypalFuturePaymentProxy : TiProxy <PayPalFuturePaymentDelegate> {
     TiPaypalConfigurationProxy *configuration;
-    PayPalPayment *payment;
+    PayPalFuturePaymentViewController *futurePaymentDialog;
 }
 
 -(void)show:(id)args;

@@ -11,6 +11,7 @@
 @interface TiPaypalPaymentProxy : TiProxy <PayPalPaymentDelegate> {
     TiPaypalConfigurationProxy *configuration;
     PayPalPayment *payment;
+    PayPalPaymentViewController *paymentDialog;
 }
 
 -(PayPalPayment*)payment;

@@ -10,6 +10,7 @@
 
 @interface TiPaypalProfileSharingProxy : TiProxy <PayPalProfileSharingDelegate> {
     TiPaypalConfigurationProxy *configuration;
+    PayPalProfileSharingViewController *profileSharingDialog;
     NSMutableArray *scopes;
 }
 

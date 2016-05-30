@@ -10,10 +10,19 @@
 
 @implementation TiPaypalProfileSharingProxy
 
+-(void)dealloc
+{
+    RELEASE_TO_NIL(scopes);
+    RELEASE_TO_NIL(profileSharingDialog);
+    RELEASE_TO_NIL(configuration);
+    
+    [super dealloc];
+}
+
 -(NSMutableArray*)scopes
 {
     if (scopes == nil) {
-        scopes = [NSMutableArray new];
+        scopes = [[NSMutableArray alloc] init];
     }
     
     return scopes;
@@ -23,27 +32,29 @@
 
 -(void)show:(id)args
 {
-    NSNumber *animated;
-    ENSURE_ARG_FOR_KEY(animated, args, @"animated", NSNumber);
+    id animated = [args valueForKey:@"animated"];
+    ENSURE_TYPE_OR_NIL(animated, NSNumber);
 
     if ([[self scopes] count] == 0) {
-        NSLog(@"[ERROR] Ti.PayPal: Cannot request profile sharing without `scoped` defined, aborting!");
+        NSLog(@"[ERROR] Ti.PayPal: Cannot request profile sharing without `scopes` defined, aborting!");
         return;
     }
     
-    PayPalProfileSharingViewController *sharing = [[PayPalProfileSharingViewController alloc] initWithScopeValues:[NSSet setWithArray:scopes]
-                                                                                                    configuration:configuration.configuration
-                                                                                                         delegate:self];
+    profileSharingDialog = [[PayPalProfileSharingViewController alloc] initWithScopeValues:[NSSet setWithArray:[self scopes]]
+                                                                             configuration:[configuration configuration]
+                                                                                  delegate:self];
     
-    [[[[TiApp app] controller] topPresentedController] presentViewController:sharing animated:[TiUtils boolValue:animated def:YES] completion:nil];
+    [[[[TiApp app] controller] topPresentedController] presentViewController:profileSharingDialog
+                                                                    animated:[TiUtils boolValue:animated def:YES]
+                                                                  completion:nil];
 }
 
--(void)setScopes:(id)value
+-(void)setScopes:(id)args
 {
-    ENSURE_SINGLE_ARG(value, NSArray);
+    ENSURE_SINGLE_ARG(args, NSArray);
     [[self scopes] removeAllObjects];
     
-    for (id scope in (NSArray*)value) {
+    for (id scope in (NSArray*)args) {
         ENSURE_TYPE(scope, NSString);
         [[self scopes] addObject:scope];
     }
@@ -62,6 +73,8 @@
     if ([self _hasListeners:@"profileSharingDidCancel"]) {
         [self fireEvent:@"profileSharingDidCancel"];
     }
+    [profileSharingDialog dismissViewControllerAnimated:YES completion:nil];
+    RELEASE_TO_NIL(profileSharingDialog);
 }
 
 -(void)payPalProfileSharingViewController:(PayPalProfileSharingViewController *)profileSharingViewController userWillLogInWithAuthorization:(NSDictionary *)profileSharingAuthorization completionBlock:(PayPalProfileSharingDelegateCompletionBlock)completionBlock
@@ -77,6 +90,8 @@
     if ([self _hasListeners:@"profileSharingDidLogIn"]) {
         [self fireEvent:@"profileSharingDidLogIn"];
     }
+    [profileSharingDialog dismissViewControllerAnimated:YES completion:nil];
+    RELEASE_TO_NIL(profileSharingDialog);
 }
 
 @end

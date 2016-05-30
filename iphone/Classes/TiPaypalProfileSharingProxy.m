@@ -80,7 +80,7 @@
 -(void)payPalProfileSharingViewController:(PayPalProfileSharingViewController *)profileSharingViewController userWillLogInWithAuthorization:(NSDictionary *)profileSharingAuthorization completionBlock:(PayPalProfileSharingDelegateCompletionBlock)completionBlock
 {
     if ([self _hasListeners:@"profileSharingWillLogIn"]) {
-        [self fireEvent:@"profileSharingWillLogIn"];
+        [self fireEvent:@"profileSharingWillLogIn" withObject:@{@"authorization": profileSharingAuthorization}];
     }
     completionBlock();
 }
@@ -88,7 +88,7 @@
 -(void)payPalProfileSharingViewController:(PayPalProfileSharingViewController *)profileSharingViewController userDidLogInWithAuthorization:(NSDictionary *)profileSharingAuthorization
 {
     if ([self _hasListeners:@"profileSharingDidLogIn"]) {
-        [self fireEvent:@"profileSharingDidLogIn"];
+        [self fireEvent:@"profileSharingDidLogIn" withObject:@{@"authorization": profileSharingAuthorization}];
     }
     [profileSharingDialog dismissViewControllerAnimated:YES completion:nil];
     RELEASE_TO_NIL(profileSharingDialog);

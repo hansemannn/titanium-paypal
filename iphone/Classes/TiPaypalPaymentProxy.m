@@ -118,7 +118,7 @@
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController willCompletePayment:(PayPalPayment *)completedPayment completionBlock:(PayPalPaymentDelegateCompletionBlock)completionBlock
 {
     if ([self _hasListeners:@"paymentWillComplete"]) {
-        [self fireEvent:@"paymentWillComplete"];
+        [self fireEvent:@"paymentWillComplete" withObject:[self confirmationFromPayment:completedPayment]];
     }
     completionBlock();
 }
@@ -126,10 +126,21 @@
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController didCompletePayment:(PayPalPayment *)completedPayment
 {
     if ([self _hasListeners:@"paymentDidComplete"]) {
-        [self fireEvent:@"paymentDidComplete"];
+        [self fireEvent:@"paymentDidComplete" withObject:[self confirmationFromPayment:completedPayment]];
     }
     [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
     RELEASE_TO_NIL(paymentDialog);
+}
+
+#pragma mark Utilities
+
+-(NSDictionary*)confirmationFromPayment:(PayPalPayment*)_payment
+{
+    NSDictionary *event = @{
+        @"payment": [_payment confirmation]
+    };
+    
+    return event;
 }
 
 @end

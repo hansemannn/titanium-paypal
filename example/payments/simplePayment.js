@@ -33,10 +33,12 @@ payment.addEventListener("paymentDidCancel", function(e) {
 
 payment.addEventListener("paymentWillComplete", function(e) {
 	Ti.API.warn("paymentWillComplete");
+	Ti.API.warn(e.payment);
 });
 
 payment.addEventListener("paymentDidComplete", function(e) {
 	Ti.API.warn("paymentDidComplete");
+	Ti.API.warn(e.payment);
 });
 
 exports.show = function() {

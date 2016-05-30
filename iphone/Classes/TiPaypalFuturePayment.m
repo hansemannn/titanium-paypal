@@ -61,7 +61,7 @@
 -(void)payPalFuturePaymentViewController:(PayPalFuturePaymentViewController *)futurePaymentViewController willAuthorizeFuturePayment:(NSDictionary *)futurePaymentAuthorization completionBlock:(PayPalFuturePaymentDelegateCompletionBlock)completionBlock
 {
     if ([self _hasListeners:@"futurePaymentWillComplete"]) {
-        [self fireEvent:@"futurePaymentWillComplete"];
+        [self fireEvent:@"futurePaymentWillComplete" withObject:@{@"payment": futurePaymentAuthorization}];
     }
     
     completionBlock();
@@ -70,7 +70,7 @@
 -(void)payPalFuturePaymentViewController:(PayPalFuturePaymentViewController *)futurePaymentViewController didAuthorizeFuturePayment:(NSDictionary *)futurePaymentAuthorization
 {
     if ([self _hasListeners:@"futurePaymentDidComplete"]) {
-        [self fireEvent:@"futurePaymentDidComplete"];
+        [self fireEvent:@"futurePaymentDidComplete" withObject:@{@"payment": futurePaymentAuthorization}];
     }
     
     [futurePaymentDialog dismissViewControllerAnimated:YES completion:nil];

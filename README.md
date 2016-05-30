@@ -12,7 +12,7 @@ Ti.PayPal is an open-source project to support the PayPal iOS-SDK 2.x in Appcele
 
 Requirements
 ---------------
-  - Titanium Mobile SDK 5.2.2.GA or later
+  - Titanium Mobile SDK 5.2.0.GA or later
   - iOS 7.1 or later
   - Xcode 7.0 or later
 
@@ -82,10 +82,12 @@ payment.addEventListener("paymentDidCancel", function(e) {
 
 payment.addEventListener("paymentWillComplete", function(e) {
 	Ti.API.warn("paymentWillComplete");
+    Ti.API.warn(e.payment);
 });
 
 payment.addEventListener("paymentDidComplete", function(e) {
 	Ti.API.warn("paymentDidComplete");
+    Ti.API.warn(e.payment);
 });
 
 payment.show();	
@@ -112,10 +114,12 @@ payment.addEventListener("futurePaymentDidCancel", function(e) {
 
 payment.addEventListener("futurePaymentWillComplete", function(e) {
     Ti.API.warn("futurePaymentWillComplete");
+    Ti.API.warn(e.payment);
 });
 
 payment.addEventListener("futurePaymentDidComplete", function(e) {
     Ti.API.warn("futurePaymentDidComplete");
+    Ti.API.warn(e.payment);
 });
 
 payment.show();	
@@ -152,10 +156,12 @@ profile.addEventListener("profileSharingDidCancel", function(e) {
 
 profile.addEventListener("profileSharingWillLogIn", function(e) {
     Ti.API.warn("profileSharingWillLogIn");
+    Ti.API.warn(e.authorization);
 });
 
 profile.addEventListener("profileSharingDidLogIn", function(e) {
     Ti.API.warn("profileSharingDidLogIn");
+    Ti.API.warn(e.authorization);
 });
 
 profile.show();

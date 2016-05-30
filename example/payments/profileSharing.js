@@ -19,10 +19,12 @@ profile.addEventListener("profileSharingDidCancel", function(e) {
 
 profile.addEventListener("profileSharingWillLogIn", function(e) {
 	Ti.API.warn("profileSharingWillLogIn");
+	Ti.API.warn(e.authorization);
 });
 
 profile.addEventListener("profileSharingDidLogIn", function(e) {
 	Ti.API.warn("profileSharingDidLogIn");
+	Ti.API.warn(e.authorization);
 });
 
 exports.show = function() {

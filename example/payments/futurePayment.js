@@ -18,10 +18,12 @@ payment.addEventListener("futurePaymentDidCancel", function(e) {
 
 payment.addEventListener("futurePaymentWillComplete", function(e) {
 	Ti.API.warn("futurePaymentWillComplete");
+	Ti.API.warn(e.payment);
 });
 
 payment.addEventListener("futurePaymentDidComplete", function(e) {
 	Ti.API.warn("futurePaymentDidComplete");
+	Ti.API.warn(e.payment);
 });
 
 exports.show = function() {

@@ -68,20 +68,6 @@ MAKE_SYSTEM_PROP(PAYMENT_INTENT_SALE, PayPalPaymentIntentSale);
 MAKE_SYSTEM_PROP(PAYMENT_INTENT_AUTHORIZE, PayPalPaymentIntentAuthorize);
 MAKE_SYSTEM_PROP(PAYMENT_INTENT_ORDER, PayPalPaymentIntentOrder);
 
-extern NSString * _Nonnull const kPayPalOAuth2ScopeFuturePayments;
-/// Share basic account information.
-extern NSString * _Nonnull const kPayPalOAuth2ScopeProfile;
-/// Basic Authentication.
-extern NSString * _Nonnull const kPayPalOAuth2ScopeOpenId;
-/// Share your personal and account information.
-extern NSString * _Nonnull const kPayPalOAuth2ScopePayPalAttributes;
-/// Share your email address.
-extern NSString * _Nonnull const kPayPalOAuth2ScopeEmail;
-/// Share your account address.
-extern NSString * _Nonnull const kPayPalOAuth2ScopeAddress;
-/// Share your phone number.
-extern NSString * _Nonnull const kPayPalOAuth2ScopePhone;
-
 MAKE_SYSTEM_STR(SCOPE_FUTURE_PAYMENTS, kPayPalOAuth2ScopeFuturePayments);
 MAKE_SYSTEM_STR(SCOPE_PROFILE, kPayPalOAuth2ScopeProfile);
 MAKE_SYSTEM_STR(SCOPE_OPEN_ID, kPayPalOAuth2ScopeOpenId);

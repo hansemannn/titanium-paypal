@@ -51,12 +51,12 @@
 
 -(void)setScopes:(id)args
 {
-    ENSURE_SINGLE_ARG(args, NSArray);
+    ENSURE_TYPE(args, NSArray);
     [[self scopes] removeAllObjects];
     
     for (id scope in (NSArray*)args) {
         ENSURE_TYPE(scope, NSString);
-        [[self scopes] addObject:scope];
+        [[self scopes] addObject:[TiUtils stringValue:scope]];
     }
 }
 

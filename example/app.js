@@ -5,9 +5,9 @@ var PayPal = require('ti.paypal'),
 	ProfileSharing = require("payments/profileSharing");
 
 PayPal.initialize({
-	clientIdSandbox: "123",
-	clientIdProduction: "456",
-	environment: PayPal.ENVIRONMENT_SANDBOX
+	clientIdSandbox: "<YOUR_CLIENT_ID_SANDBOX>",
+	clientIdProduction: "<YOUR_CLIENT_ID_PRODUCTION>",
+	environment: PayPal.ENVIRONMENT_SANDBOX // or: ENVIRONMENT_PRODUCTION
 });
 
 var window = Ti.UI.createWindow({
@@ -19,10 +19,13 @@ window.add(createButton("Simple Payment", doSimplePayment));
 window.add(createButton("Future Payment", doFuturePayment));
 window.add(createButton("Profile Sharing", doProfileSharing));
 
+window.open();
+
 function createButton(title, cb) {
 	var btn = Ti.UI.createButton({
 		title: title,
 		width: 300,
+		color: "#fff",
 		height: 40,
 		backgroundColor: "#333",
 		top: 40

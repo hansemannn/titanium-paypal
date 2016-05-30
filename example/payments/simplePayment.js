@@ -5,6 +5,7 @@ var item1 = PayPal.createPaymentItem({
 	name: "My item",
 	price: 23.99,
 	sku: "my-item",
+	quantity: 1,
 	currency: "USD"
 });
 
@@ -12,7 +13,7 @@ var configuration = PayPal.createConfiguration({
 	merchantName: "John Doe",
 	merchantPrivacyPolicyURL: "http://google.com",
 	merchantUserAgreementURL: "http://google.com",
-	locale: "de"
+	locale: "en"
 });
 
 var payment = PayPal.createPayment({
@@ -39,5 +40,7 @@ payment.addEventListener("paymentDidComplete", function(e) {
 });
 
 exports.show = function() {
-	payment.show();	
+	payment.show({
+		animated: true
+	});	
 };

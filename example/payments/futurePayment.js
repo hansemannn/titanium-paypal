@@ -5,7 +5,7 @@ var configuration = PayPal.createConfiguration({
 	merchantName: "John Doe",
 	merchantPrivacyPolicyURL: "http://google.com",
 	merchantUserAgreementURL: "http://google.com",
-	locale: "de"
+	locale: "en"
 });
 
 var payment = PayPal.createFuturePayment({

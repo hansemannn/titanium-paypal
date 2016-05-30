@@ -5,12 +5,12 @@ var configuration = PayPal.createConfiguration({
 	merchantName: "John Doe",
 	merchantPrivacyPolicyURL: "http://google.com",
 	merchantUserAgreementURL: "http://google.com",
-	locale: "de"
+	locale: "en"
 });
 
 var profile = PayPal.createProfileSharing({
 	configuration: configuration,
-	scopes: [PayPal.SCOPE_PROFILE, PayPal.SCOPE_EMAIL]
+//	scopes: [PayPal.SCOPE_PROFILE, PayPal.SCOPE_EMAIL]
 });
 
 profile.addEventListener("profileSharingDidCancel", function(e) {

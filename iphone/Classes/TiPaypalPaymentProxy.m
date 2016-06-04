@@ -101,6 +101,64 @@
     [[self payment] setIntent:[TiUtils intValue:value def:PayPalPaymentIntentSale]];
 }
 
+-(void)setSoftDescriptor:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setSoftDescriptor:[TiUtils stringValue:value]];
+}
+
+-(void)setCustom:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setCustom:[TiUtils stringValue:value]];
+}
+
+-(void)setInvoiceNumber:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setInvoiceNumber:[TiUtils stringValue:value]];
+}
+
+-(void)setBnCode:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setBnCode:[TiUtils stringValue:value]];
+}
+
+-(void)setShippingAddress:(id)args
+{
+    ENSURE_TYPE(args, NSDictionary);
+    
+    NSString *recipientName;
+    NSString *line1;
+    NSString *city;
+    NSString *countryCode;
+    
+    NSString *line2;
+    NSString *state;
+    NSString *postalCode;
+    
+    // Required
+    ENSURE_ARG_FOR_KEY(recipientName, args, @"recipientName", NSString);
+    ENSURE_ARG_FOR_KEY(line1, args, @"line1", NSString);
+    ENSURE_ARG_FOR_KEY(city, args, @"city", NSString);
+    ENSURE_ARG_FOR_KEY(countryCode, args, @"countryCode", NSString);
+
+    // Optional
+    ENSURE_ARG_OR_NIL_FOR_KEY(line2, args, @"line2", NSString);
+    ENSURE_ARG_OR_NIL_FOR_KEY(state, args, @"state", NSString);
+    ENSURE_ARG_OR_NIL_FOR_KEY(postalCode, args, @"postalCode", NSString);
+
+    PayPalShippingAddress *shippingAddress = [PayPalShippingAddress shippingAddressWithRecipientName:recipientName
+                                                                                           withLine1:line1
+                                                                                           withLine2:line2
+                                                                                            withCity:city
+                                                                                           withState:state
+                                                                                      withPostalCode:postalCode
+                                                                                     withCountryCode:countryCode];
+    [[self payment] setShippingAddress:shippingAddress];
+}
+
 #pragma mark - Delegates
 
 #pragma mark Simple payments

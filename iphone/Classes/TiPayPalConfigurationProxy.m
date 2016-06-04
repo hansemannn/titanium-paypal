@@ -49,4 +49,71 @@
     [[self configuration] setMerchantUserAgreementURL:[NSURL URLWithString:[TiUtils stringValue:value]]];
 }
 
+-(void)setDefaultUserEmail:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSString);
+    [[self configuration] setDefaultUserEmail:[TiUtils stringValue:value]];
+}
+
+-(void)setDefaultUserPhoneNumber:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSString);
+    [[self configuration] setDefaultUserPhoneNumber:[TiUtils stringValue:value]];
+}
+
+-(void)setDefaultUserPhoneCountryCode:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSString);
+    [[self configuration] setDefaultUserPhoneCountryCode:[TiUtils stringValue:value]];
+}
+
+-(void)setAcceptCreditCards:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setAcceptCreditCards:[TiUtils boolValue:value def:YES]];
+}
+
+-(void)setAlwaysDisplayCurrencyCodes:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setAlwaysDisplayCurrencyCodes:[TiUtils boolValue:value def:NO]];
+}
+
+-(void)setDisableBlurWhenBackgrounding:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setDisableBlurWhenBackgrounding:[TiUtils boolValue:value def:NO]];
+}
+
+-(void)setPresentingInPopover:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setPresentingInPopover:[TiUtils boolValue:value def:NO]];
+}
+
+-(void)setForceDefaultsInSandbox:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setForceDefaultsInSandbox:[TiUtils boolValue:value def:NO]];
+}
+
+-(void)setSandboxUserPassword:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSString);
+    [[self configuration] setSandboxUserPassword:[TiUtils stringValue:value]];
+}
+
+-(void)setSandboxUserPin:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSString);
+    [[self configuration] setSandboxUserPin:[TiUtils stringValue:value]];
+}
+
+-(void)setPayPalShippingAddressOption:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setPayPalShippingAddressOption:[TiUtils intValue:value def:PayPalShippingAddressOptionNone]];
+}
+
+
 @end

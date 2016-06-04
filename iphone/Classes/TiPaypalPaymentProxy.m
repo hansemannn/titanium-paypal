@@ -159,6 +159,26 @@
     [[self payment] setShippingAddress:shippingAddress];
 }
 
+-(void)setPaymentDetails:(id)args
+{
+    ENSURE_TYPE(args, NSDictionary);
+    
+    NSNumber *subtotal;
+    NSNumber *shipping;
+    NSNumber *tax;
+    
+    ENSURE_ARG_OR_NIL_FOR_KEY(subtotal, args, @"subtotal", NSNumber);
+    ENSURE_ARG_OR_NIL_FOR_KEY(shipping, args, @"shipping", NSNumber);
+    ENSURE_ARG_OR_NIL_FOR_KEY(tax, args, @"tax", NSNumber);
+    
+    PayPalPaymentDetails *paymentDetails = [PayPalPaymentDetails
+                                            paymentDetailsWithSubtotal:[NSDecimalNumber decimalNumberWithDecimal:[subtotal decimalValue]]
+                                            withShipping:[NSDecimalNumber decimalNumberWithDecimal:[shipping decimalValue]]
+                                            withTax:[NSDecimalNumber decimalNumberWithDecimal:[tax decimalValue]]];
+    
+    [[self payment] setPaymentDetails:paymentDetails];
+}
+
 #pragma mark - Delegates
 
 #pragma mark Simple payments

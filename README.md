@@ -10,6 +10,8 @@ Ti.PayPal is an open-source project to support the PayPal iOS-SDK 2.x in Appcele
 - [x] Future Payments
 - [x] Merchant Configuration
 
+> Note: This is the iOS version of Ti.PayPal. You might want to check [appwert/ti.paypal](https://github.com/AppWerft/Ti.Paypal) for the Android equivalent 🚀.
+
 Requirements
 ---------------
   - Titanium Mobile SDK 5.2.0.GA or later

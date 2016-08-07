@@ -51,9 +51,10 @@
         return;
     }
 
-    [[[[TiApp app] controller] topPresentedController] presentViewController:[self paymentDialog]
-                                                                    animated:[TiUtils boolValue:animated def:YES]
-                                                                  completion:nil];
+    TiThreadPerformOnMainThread(^{
+        [[TiApp app] showModalController:[self paymentDialog]
+                                animated:[TiUtils boolValue:animated def:YES]];
+    }, NO);
 }
 
 -(void)setConfiguration:(id)value

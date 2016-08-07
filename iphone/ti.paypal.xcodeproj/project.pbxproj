@@ -26,14 +26,14 @@
 		24DD6CFA1134B3F500162E58 /* TiPaypalModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiPaypalModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* TiPaypalModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiPaypalModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* TiPaypalModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiPaypalModuleAssets.m */; };
-		3AB250931CFB6E6E00D892FF /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2508B1CFB6E6E00D892FF /* libPayPalMobile.a */; };
-		3AB250941CFB6E6E00D892FF /* PayPalConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2508C1CFB6E6E00D892FF /* PayPalConfiguration.h */; };
-		3AB250951CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2508D1CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h */; };
-		3AB250961CFB6E6E00D892FF /* PayPalMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2508E1CFB6E6E00D892FF /* PayPalMobile.h */; };
-		3AB250971CFB6E6E00D892FF /* PayPalOAuthScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2508F1CFB6E6E00D892FF /* PayPalOAuthScopes.h */; };
-		3AB250981CFB6E6E00D892FF /* PayPalPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250901CFB6E6E00D892FF /* PayPalPayment.h */; };
-		3AB250991CFB6E6E00D892FF /* PayPalPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250911CFB6E6E00D892FF /* PayPalPaymentViewController.h */; };
-		3AB2509A1CFB6E6E00D892FF /* PayPalProfileSharingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB250921CFB6E6E00D892FF /* PayPalProfileSharingViewController.h */; };
+		3A912FEA1D57471600B18A54 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A912FE21D57471600B18A54 /* libPayPalMobile.a */; };
+		3A912FEB1D57471600B18A54 /* PayPalConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE31D57471600B18A54 /* PayPalConfiguration.h */; };
+		3A912FEC1D57471600B18A54 /* PayPalFuturePaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE41D57471600B18A54 /* PayPalFuturePaymentViewController.h */; };
+		3A912FED1D57471600B18A54 /* PayPalMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE51D57471600B18A54 /* PayPalMobile.h */; };
+		3A912FEE1D57471600B18A54 /* PayPalOAuthScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE61D57471600B18A54 /* PayPalOAuthScopes.h */; };
+		3A912FEF1D57471600B18A54 /* PayPalPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE71D57471600B18A54 /* PayPalPayment.h */; };
+		3A912FF01D57471600B18A54 /* PayPalPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE81D57471600B18A54 /* PayPalPaymentViewController.h */; };
+		3A912FF11D57471600B18A54 /* PayPalProfileSharingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A912FE91D57471600B18A54 /* PayPalProfileSharingViewController.h */; };
 		3AB2509C1CFB6EC200D892FF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2509B1CFB6EC200D892FF /* Accelerate.framework */; };
 		3AB2509E1CFB6EC800D892FF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2509D1CFB6EC800D892FF /* AudioToolbox.framework */; };
 		3AB250A61CFB6EEE00D892FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2509F1CFB6EEE00D892FF /* AVFoundation.framework */; };
@@ -73,14 +73,14 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* TiPaypalModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPaypalModuleAssets.h; path = Classes/TiPaypalModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* TiPaypalModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPaypalModuleAssets.m; path = Classes/TiPaypalModuleAssets.m; sourceTree = "<group>"; };
-		3AB2508B1CFB6E6E00D892FF /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
-		3AB2508C1CFB6E6E00D892FF /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
-		3AB2508D1CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
-		3AB2508E1CFB6E6E00D892FF /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalMobile.h; sourceTree = "<group>"; };
-		3AB2508F1CFB6E6E00D892FF /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalOAuthScopes.h; sourceTree = "<group>"; };
-		3AB250901CFB6E6E00D892FF /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
-		3AB250911CFB6E6E00D892FF /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
-		3AB250921CFB6E6E00D892FF /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		3A912FE21D57471600B18A54 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
+		3A912FE31D57471600B18A54 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
+		3A912FE41D57471600B18A54 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		3A912FE51D57471600B18A54 /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalMobile.h; sourceTree = "<group>"; };
+		3A912FE61D57471600B18A54 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalOAuthScopes.h; sourceTree = "<group>"; };
+		3A912FE71D57471600B18A54 /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
+		3A912FE81D57471600B18A54 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
+		3A912FE91D57471600B18A54 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
 		3AB2509B1CFB6EC200D892FF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3AB2509D1CFB6EC800D892FF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3AB2509F1CFB6EEE00D892FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -110,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB250931CFB6E6E00D892FF /* libPayPalMobile.a in Frameworks */,
 				3AB250A61CFB6EEE00D892FF /* AVFoundation.framework in Frameworks */,
 				3AB250A71CFB6EEE00D892FF /* CoreLocation.framework in Frameworks */,
 				3AB250A81CFB6EEE00D892FF /* CoreMedia.framework in Frameworks */,
@@ -119,6 +118,7 @@
 				3AB250AB1CFB6EEE00D892FF /* SafariServices.framework in Frameworks */,
 				3AB250AC1CFB6EEE00D892FF /* SystemConfiguration.framework in Frameworks */,
 				3AB2509E1CFB6EC800D892FF /* AudioToolbox.framework in Frameworks */,
+				3A912FEA1D57471600B18A54 /* libPayPalMobile.a in Frameworks */,
 				3AB2509C1CFB6EC200D892FF /* Accelerate.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
@@ -166,7 +166,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3AB2508A1CFB6E6E00D892FF /* PayPalMobile */,
+				3A912FE11D57471600B18A54 /* PayPalMobile */,
 				24DE9E0F11C5FE74003F90F6 /* TiPaypalModuleAssets.h */,
 				24DE9E1011C5FE74003F90F6 /* TiPaypalModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* TiPaypalModule.h */,
@@ -189,17 +189,17 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		3AB2508A1CFB6E6E00D892FF /* PayPalMobile */ = {
+		3A912FE11D57471600B18A54 /* PayPalMobile */ = {
 			isa = PBXGroup;
 			children = (
-				3AB2508B1CFB6E6E00D892FF /* libPayPalMobile.a */,
-				3AB2508C1CFB6E6E00D892FF /* PayPalConfiguration.h */,
-				3AB2508D1CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h */,
-				3AB2508E1CFB6E6E00D892FF /* PayPalMobile.h */,
-				3AB2508F1CFB6E6E00D892FF /* PayPalOAuthScopes.h */,
-				3AB250901CFB6E6E00D892FF /* PayPalPayment.h */,
-				3AB250911CFB6E6E00D892FF /* PayPalPaymentViewController.h */,
-				3AB250921CFB6E6E00D892FF /* PayPalProfileSharingViewController.h */,
+				3A912FE21D57471600B18A54 /* libPayPalMobile.a */,
+				3A912FE31D57471600B18A54 /* PayPalConfiguration.h */,
+				3A912FE41D57471600B18A54 /* PayPalFuturePaymentViewController.h */,
+				3A912FE51D57471600B18A54 /* PayPalMobile.h */,
+				3A912FE61D57471600B18A54 /* PayPalOAuthScopes.h */,
+				3A912FE71D57471600B18A54 /* PayPalPayment.h */,
+				3A912FE81D57471600B18A54 /* PayPalPaymentViewController.h */,
+				3A912FE91D57471600B18A54 /* PayPalProfileSharingViewController.h */,
 			);
 			name = PayPalMobile;
 			path = platform/PayPalMobile;
@@ -257,19 +257,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A912FEF1D57471600B18A54 /* PayPalPayment.h in Headers */,
+				3A912FED1D57471600B18A54 /* PayPalMobile.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* TiPaypal_Prefix.pch in Headers */,
-				3AB250991CFB6E6E00D892FF /* PayPalPaymentViewController.h in Headers */,
-				3AB250961CFB6E6E00D892FF /* PayPalMobile.h in Headers */,
-				3AB250981CFB6E6E00D892FF /* PayPalPayment.h in Headers */,
 				3AB250BA1CFB778A00D892FF /* TiPaypalConfigurationProxy.h in Headers */,
+				3A912FEC1D57471600B18A54 /* PayPalFuturePaymentViewController.h in Headers */,
+				3A912FF01D57471600B18A54 /* PayPalPaymentViewController.h in Headers */,
 				3AB250C41CFB7D6C00D892FF /* TiPaypalProfileSharingProxy.h in Headers */,
 				24DD6CF91134B3F500162E58 /* TiPaypalModule.h in Headers */,
+				3A912FEE1D57471600B18A54 /* PayPalOAuthScopes.h in Headers */,
+				3A912FEB1D57471600B18A54 /* PayPalConfiguration.h in Headers */,
 				3AB250BF1CFB7C8500D892FF /* TiPaypalFuturePaymentProxy.h in Headers */,
 				3AB250B51CFB768900D892FF /* TiPaypalPaymentProxy.h in Headers */,
-				3AB250951CFB6E6E00D892FF /* PayPalFuturePaymentViewController.h in Headers */,
-				3AB250941CFB6E6E00D892FF /* PayPalConfiguration.h in Headers */,
-				3AB2509A1CFB6E6E00D892FF /* PayPalProfileSharingViewController.h in Headers */,
-				3AB250971CFB6E6E00D892FF /* PayPalOAuthScopes.h in Headers */,
+				3A912FF11D57471600B18A54 /* PayPalProfileSharingViewController.h in Headers */,
 				3AB250AF1CFB742F00D892FF /* TiPaypalPaymentItemProxy.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiPaypalModuleAssets.h in Headers */,
 			);

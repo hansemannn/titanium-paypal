@@ -54,7 +54,7 @@
     TiThreadPerformOnMainThread(^{
         [[TiApp app] showModalController:[self paymentDialog]
                                 animated:[TiUtils boolValue:animated def:YES]];
-    }, NO);
+    }, YES);
 }
 
 -(void)setConfiguration:(id)value
@@ -187,11 +187,13 @@
 -(void)payPalPaymentDidCancel:(PayPalPaymentViewController *)paymentViewController
 {
     if ([self _hasListeners:@"paymentDidCancel"]) {
-        [self fireEvent:@"paymentDidCancel"];
+        [self fireEvent:@"paymentDidCancel" withObject:@{@"cancelled": NUMBOOL(YES)}];
     }
     
-    [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
-    RELEASE_TO_NIL(paymentDialog);
+    TiThreadPerformOnMainThread(^{
+        [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
+        RELEASE_TO_NIL(paymentDialog);
+    }, YES);
 }
 
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController willCompletePayment:(PayPalPayment *)completedPayment completionBlock:(PayPalPaymentDelegateCompletionBlock)completionBlock
@@ -207,8 +209,11 @@
     if ([self _hasListeners:@"paymentDidComplete"]) {
         [self fireEvent:@"paymentDidComplete" withObject:[self confirmationFromPayment:completedPayment]];
     }
-    [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
-    RELEASE_TO_NIL(paymentDialog);
+
+    TiThreadPerformOnMainThread(^{
+        [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
+        RELEASE_TO_NIL(paymentDialog);
+    }, YES);
 }
 
 #pragma mark Utilities

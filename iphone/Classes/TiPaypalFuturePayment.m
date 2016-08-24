@@ -59,7 +59,7 @@
         [[TiApp app] hideModalController:futurePaymentDialog animated:YES];
         [futurePaymentDialog setDelegate:nil];
         RELEASE_TO_NIL(futurePaymentDialog);
-    }, YES);
+    }, NO);
 }
 
 -(void)payPalFuturePaymentViewController:(PayPalFuturePaymentViewController *)futurePaymentViewController willAuthorizeFuturePayment:(NSDictionary *)futurePaymentAuthorization completionBlock:(PayPalFuturePaymentDelegateCompletionBlock)completionBlock
@@ -81,7 +81,7 @@
         [[TiApp app] hideModalController:futurePaymentDialog animated:YES];
         [futurePaymentDialog setDelegate:nil];
         RELEASE_TO_NIL(futurePaymentDialog);
-    }, YES);
+    }, NO);
 }
 
 @end

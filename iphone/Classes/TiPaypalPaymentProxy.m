@@ -54,7 +54,7 @@
     TiThreadPerformOnMainThread(^{
         [[TiApp app] showModalController:[self paymentDialog]
                                 animated:[TiUtils boolValue:animated def:YES]];
-    }, YES);
+    }, NO);
 }
 
 -(void)setConfiguration:(id)value
@@ -194,7 +194,7 @@
         [[TiApp app] hideModalController:paymentDialog animated:YES];
         [paymentDialog setDelegate:nil];
         RELEASE_TO_NIL(paymentDialog);
-    }, YES);
+    }, NO);
 }
 
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController willCompletePayment:(PayPalPayment *)completedPayment completionBlock:(PayPalPaymentDelegateCompletionBlock)completionBlock
@@ -215,7 +215,7 @@
         [[TiApp app] hideModalController:paymentDialog animated:YES];
         [paymentDialog setDelegate:nil];
         RELEASE_TO_NIL(paymentDialog);
-    }, YES);
+    }, NO);
 }
 
 #pragma mark Utilities

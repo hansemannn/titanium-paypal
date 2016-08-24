@@ -15,8 +15,8 @@
 -(void)dealloc
 {
     RELEASE_TO_NIL(payment);
-    RELEASE_TO_NIL(paymentDialog);
     RELEASE_TO_NIL(configuration);
+    RELEASE_TO_NIL(paymentDialog);
     
     [super dealloc];
 }
@@ -74,7 +74,7 @@
         [result addObject:[proxy item]];
     }
 
-   [[self payment] setItems:result];
+    [[self payment] setItems:result];
     RELEASE_TO_NIL(result);
 }
 
@@ -191,7 +191,8 @@
     }
     
     TiThreadPerformOnMainThread(^{
-        [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
+        [[TiApp app] hideModalController:paymentDialog animated:YES];
+        [paymentDialog setDelegate:nil];
         RELEASE_TO_NIL(paymentDialog);
     }, YES);
 }
@@ -211,7 +212,8 @@
     }
 
     TiThreadPerformOnMainThread(^{
-        [[self paymentDialog] dismissViewControllerAnimated:YES completion:nil];
+        [[TiApp app] hideModalController:paymentDialog animated:YES];
+        [paymentDialog setDelegate:nil];
         RELEASE_TO_NIL(paymentDialog);
     }, YES);
 }

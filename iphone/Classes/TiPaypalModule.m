@@ -52,12 +52,14 @@
     ENSURE_ARG_FOR_KEY(clientIdSandbox, args, @"clientIdSandbox", NSString);
     ENSURE_ARG_FOR_KEY(environment, args, @"environment", NSString);
     
-    [PayPalMobile initializeWithClientIdsForEnvironments:@{
-        PayPalEnvironmentProduction : clientIdProduction,
-        PayPalEnvironmentSandbox : clientIdSandbox
-    }];
-    
-    [PayPalMobile preconnectWithEnvironment:environment];
+    TiThreadPerformOnMainThread(^{
+        [PayPalMobile initializeWithClientIdsForEnvironments:@{
+            PayPalEnvironmentProduction : clientIdProduction,
+            PayPalEnvironmentSandbox : clientIdSandbox
+        }];
+        
+        [PayPalMobile preconnectWithEnvironment:environment];
+    }, NO);
 }
 
 MAKE_SYSTEM_STR(ENVIRONMENT_PRODUCTION, PayPalEnvironmentProduction);

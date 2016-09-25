@@ -73,7 +73,9 @@
     if ([self _hasListeners:@"profileSharingDidCancel"]) {
         [self fireEvent:@"profileSharingDidCancel"];
     }
-    [profileSharingDialog dismissViewControllerAnimated:YES completion:nil];
+    
+    [[TiApp app] hideModalController:profileSharingViewController animated:YES];
+    [profileSharingDialog setDelegate:nil];
     RELEASE_TO_NIL(profileSharingDialog);
 }
 
@@ -90,7 +92,9 @@
     if ([self _hasListeners:@"profileSharingDidLogIn"]) {
         [self fireEvent:@"profileSharingDidLogIn" withObject:@{@"authorization": profileSharingAuthorization}];
     }
-    [profileSharingDialog dismissViewControllerAnimated:YES completion:nil];
+
+    [[TiApp app] hideModalController:profileSharingViewController animated:YES];
+    [profileSharingDialog setDelegate:nil];
     RELEASE_TO_NIL(profileSharingDialog);
 }
 

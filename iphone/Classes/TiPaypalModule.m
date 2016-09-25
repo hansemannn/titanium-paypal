@@ -62,6 +62,21 @@
     }, NO);
 }
 
+-(NSString*)clientMetadataID
+{
+    return [PayPalMobile clientMetadataID];
+}
+
+-(NSString*)clearAllUserData
+{
+    return [PayPalMobile libraryVersion];
+}
+
+-(void)clearAllUserData:(id)unused
+{
+    return [PayPalMobile clearAllUserData];
+}
+
 MAKE_SYSTEM_STR(ENVIRONMENT_PRODUCTION, PayPalEnvironmentProduction);
 MAKE_SYSTEM_STR(ENVIRONMENT_SANDBOX, PayPalEnvironmentSandbox);
 MAKE_SYSTEM_STR(ENVIRONMENT_NO_NETWORK, PayPalEnvironmentNoNetwork);

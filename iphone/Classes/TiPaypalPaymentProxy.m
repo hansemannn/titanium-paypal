@@ -190,11 +190,9 @@
         [self fireEvent:@"paymentDidCancel" withObject:@{@"cancelled": NUMBOOL(YES)}];
     }
     
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] hideModalController:paymentDialog animated:YES];
-        [paymentDialog setDelegate:nil];
-        RELEASE_TO_NIL(paymentDialog);
-    }, NO);
+    [[TiApp app] hideModalController:paymentViewController animated:YES];
+    [paymentDialog setDelegate:nil];
+    RELEASE_TO_NIL(paymentDialog);
 }
 
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController willCompletePayment:(PayPalPayment *)completedPayment completionBlock:(PayPalPaymentDelegateCompletionBlock)completionBlock
@@ -211,11 +209,9 @@
         [self fireEvent:@"paymentDidComplete" withObject:[self confirmationFromPayment:completedPayment]];
     }
 
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] hideModalController:paymentDialog animated:YES];
-        [paymentDialog setDelegate:nil];
-        RELEASE_TO_NIL(paymentDialog);
-    }, NO);
+    [[TiApp app] hideModalController:paymentViewController animated:YES];
+    [paymentDialog setDelegate:nil];
+    RELEASE_TO_NIL(paymentDialog);
 }
 
 #pragma mark Utilities

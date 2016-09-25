@@ -55,11 +55,9 @@
         [self fireEvent:@"futurePaymentDidCancel"];
     }
     
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] hideModalController:futurePaymentDialog animated:YES];
-        [futurePaymentDialog setDelegate:nil];
-        RELEASE_TO_NIL(futurePaymentDialog);
-    }, NO);
+    [[TiApp app] hideModalController:futurePaymentViewController animated:YES];
+    [futurePaymentDialog setDelegate:nil];
+    RELEASE_TO_NIL(futurePaymentDialog);
 }
 
 -(void)payPalFuturePaymentViewController:(PayPalFuturePaymentViewController *)futurePaymentViewController willAuthorizeFuturePayment:(NSDictionary *)futurePaymentAuthorization completionBlock:(PayPalFuturePaymentDelegateCompletionBlock)completionBlock
@@ -77,11 +75,9 @@
         [self fireEvent:@"futurePaymentDidComplete" withObject:@{@"payment": futurePaymentAuthorization}];
     }
     
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] hideModalController:futurePaymentDialog animated:YES];
-        [futurePaymentDialog setDelegate:nil];
-        RELEASE_TO_NIL(futurePaymentDialog);
-    }, NO);
+    [[TiApp app] hideModalController:futurePaymentViewController animated:YES];
+    [futurePaymentDialog setDelegate:nil];
+    RELEASE_TO_NIL(futurePaymentDialog);
 }
 
 @end

@@ -115,5 +115,16 @@
     [[self configuration] setPayPalShippingAddressOption:[TiUtils intValue:value def:PayPalShippingAddressOptionNone]];
 }
 
+-(void)setRememberUser:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setRememberUser:[TiUtils boolValue:value def:NO]];
+}
+
+-(void)setDisableShakeAnimations:(id)value
+{
+    ENSURE_SINGLE_ARG(value, NSNumber);
+    [[self configuration] setDisableShakeAnimations:[TiUtils boolValue:value def:NO]];
+}
 
 @end

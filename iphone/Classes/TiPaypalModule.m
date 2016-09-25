@@ -67,7 +67,7 @@
     return [PayPalMobile clientMetadataID];
 }
 
--(NSString*)clearAllUserData
+-(NSString*)libraryVersion
 {
     return [PayPalMobile libraryVersion];
 }

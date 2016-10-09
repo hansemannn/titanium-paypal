@@ -12,8 +12,10 @@
 
 -(void)dealloc
 {
-    RELEASE_TO_NIL(scopes);
     RELEASE_TO_NIL(profileSharingDialog);
+    RELEASE_TO_NIL(scopes);
+    
+    [self forgetProxy:configuration];
     RELEASE_TO_NIL(configuration);
     
     [super dealloc];
@@ -28,10 +30,25 @@
     return scopes;
 }
 
+-(PayPalProfileSharingViewController*)profileSharingDialog
+{
+    if (profileSharingDialog == nil) {
+        profileSharingDialog = [[PayPalProfileSharingViewController alloc] initWithScopeValues:[NSSet setWithArray:[self scopes]]
+                                                                                 configuration:[configuration configuration]
+                                                                                      delegate:self];
+    }
+    
+    return profileSharingDialog;
+}
+
+
 #pragma mark Public APIs
 
 -(void)show:(id)args
 {
+    ENSURE_UI_THREAD(show, args);
+    ENSURE_SINGLE_ARG(args, NSArray);
+
     id animated = [args valueForKey:@"animated"];
     ENSURE_TYPE_OR_NIL(animated, NSNumber);
 
@@ -40,13 +57,10 @@
         return;
     }
     
-    profileSharingDialog = [[PayPalProfileSharingViewController alloc] initWithScopeValues:[NSSet setWithArray:[self scopes]]
-                                                                             configuration:[configuration configuration]
-                                                                                  delegate:self];
-    
-    [[[[TiApp app] controller] topPresentedController] presentViewController:profileSharingDialog
-                                                                    animated:[TiUtils boolValue:animated def:YES]
-                                                                  completion:nil];
+    [self rememberSelf];
+
+    [[TiApp app] showModalController:[self profileSharingDialog]
+                            animated:[TiUtils boolValue:animated def:YES]];
 }
 
 -(void)setScopes:(id)args
@@ -63,7 +77,14 @@
 -(void)setConfiguration:(id)value
 {
     ENSURE_TYPE(value, TiPaypalConfigurationProxy);
-    configuration = value;
+    
+    if (configuration) {
+        [self forgetProxy:configuration];
+        RELEASE_TO_NIL(configuration);
+    }
+    
+    configuration = [value autorelease];
+    [self rememberProxy:configuration];
 }
 
 #pragma mark Delegates

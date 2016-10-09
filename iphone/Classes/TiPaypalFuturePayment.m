@@ -12,8 +12,10 @@
 
 -(void)dealloc
 {
-    RELEASE_TO_NIL(configuration);
     RELEASE_TO_NIL(futurePaymentDialog);
+    
+    [self forgetProxy:configuration];
+    RELEASE_TO_NIL(configuration);
     
     [super dealloc];
 }
@@ -32,19 +34,29 @@
 
 -(void)show:(id)args
 {
+    ENSURE_UI_THREAD(show, args);
+    ENSURE_SINGLE_ARG(args, NSArray);
+
     id animated = [args valueForKey:@"animated"];
     ENSURE_TYPE_OR_NIL(animated, NSNumber);
     
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] showModalController:[self futurePaymentDialog]
-                                animated:[TiUtils boolValue:animated def:YES]];
-    }, NO);
+    [self rememberSelf];
+
+    [[TiApp app] showModalController:[self futurePaymentDialog]
+                            animated:[TiUtils boolValue:animated def:YES]];
 }
 
 -(void)setConfiguration:(id)value
 {
     ENSURE_TYPE(value, TiPaypalConfigurationProxy);
-    configuration = value;
+    
+    if (configuration) {
+        [self forgetProxy:configuration];
+        RELEASE_TO_NIL(configuration);
+    }
+    
+    configuration = [value autorelease];
+    [self rememberProxy:configuration];
 }
 
 #pragma mark Delegates

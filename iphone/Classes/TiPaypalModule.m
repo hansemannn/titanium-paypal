@@ -1,10 +1,9 @@
 /**
- * ti.paypal
- *
- * Created by Hans Knoechel
- * Copyright (c) 2016 Your Company. All rights reserved.
+ * Appcelerator Titanium Mobile
+ * Copyright (c) 2009-2016 by Appcelerator, Inc. All Rights Reserved.
+ * Licensed under the terms of the Apache Public License
+ * Please see the LICENSE included with this distribution for details.
  */
-
 #import "TiPaypalModule.h"
 #import "TiBase.h"
 #import "TiHost.h"
@@ -74,7 +73,7 @@
 
 -(void)clearAllUserData:(id)unused
 {
-    return [PayPalMobile clearAllUserData];
+    [PayPalMobile clearAllUserData];
 }
 
 MAKE_SYSTEM_STR(ENVIRONMENT_PRODUCTION, PayPalEnvironmentProduction);

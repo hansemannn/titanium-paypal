@@ -14,9 +14,11 @@
 
 -(void)dealloc
 {
-    RELEASE_TO_NIL(payment);
-    RELEASE_TO_NIL(configuration);
     RELEASE_TO_NIL(paymentDialog);
+    RELEASE_TO_NIL(payment);
+
+    [self forgetProxy:configuration];
+    RELEASE_TO_NIL(configuration);
     
     [super dealloc];
 }
@@ -24,7 +26,7 @@
 -(PayPalPayment *)payment
 {
     if (payment == nil) {
-        payment = [PayPalPayment new];
+        payment = [[PayPalPayment alloc] init];
     }
     
     return payment;
@@ -43,6 +45,9 @@
 
 -(void)show:(id)args
 {
+    ENSURE_UI_THREAD(show, args);
+    ENSURE_SINGLE_ARG(args, NSArray);
+
     id animated = [args valueForKey:@"animated"];
     ENSURE_TYPE_OR_NIL(animated, NSNumber);
     
@@ -51,22 +56,29 @@
         return;
     }
 
-    TiThreadPerformOnMainThread(^{
-        [[TiApp app] showModalController:[self paymentDialog]
-                                animated:[TiUtils boolValue:animated def:YES]];
-    }, NO);
+    [self rememberSelf];
+    
+    [[TiApp app] showModalController:[self paymentDialog]
+                            animated:[TiUtils boolValue:animated def:YES]];
 }
 
 -(void)setConfiguration:(id)value
 {
     ENSURE_TYPE(value, TiPaypalConfigurationProxy);
-    configuration = value;
+    
+    if (configuration) {
+        [self forgetProxy:configuration];
+        RELEASE_TO_NIL(configuration);
+    }
+    
+    configuration = [value autorelease];
+    [self rememberProxy:configuration];
 }
 
 -(void)setItems:(id)value
 {
     ENSURE_TYPE(value, NSArray);
-    NSMutableArray *result = [NSMutableArray new];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[value count]];
     
     for (id item in (NSArray*)value) {
         ENSURE_TYPE(item, TiPaypalPaymentItemProxy);
@@ -190,9 +202,7 @@
         [self fireEvent:@"paymentDidCancel" withObject:@{@"cancelled": NUMBOOL(YES)}];
     }
     
-    [[TiApp app] hideModalController:paymentViewController animated:YES];
-    [paymentDialog setDelegate:nil];
-    RELEASE_TO_NIL(paymentDialog);
+    [[TiApp app] hideModalController:[self paymentDialog] animated:YES];
 }
 
 -(void)payPalPaymentViewController:(PayPalPaymentViewController *)paymentViewController willCompletePayment:(PayPalPayment *)completedPayment completionBlock:(PayPalPaymentDelegateCompletionBlock)completionBlock
@@ -209,9 +219,7 @@
         [self fireEvent:@"paymentDidComplete" withObject:[self confirmationFromPayment:completedPayment]];
     }
 
-    [[TiApp app] hideModalController:paymentViewController animated:YES];
-    [paymentDialog setDelegate:nil];
-    RELEASE_TO_NIL(paymentDialog);
+    [[TiApp app] hideModalController:[self paymentDialog] animated:YES];
 }
 
 #pragma mark Utilities

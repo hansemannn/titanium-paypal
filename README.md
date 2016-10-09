@@ -33,13 +33,30 @@ Edit the modules section of your `tiapp.xml` file to include this module:
 </modules>
 ```
 
+Integrate the following snippet in your tiapp.xml. It is used to enable 1Password support
+that is used by the PayPal-SDK:
+```xml
+<ios>
+    <plist>
+        <dict>
+            <key>LSApplicationQueriesSchemes</key>
+            <array>
+                <string>com.paypal.ppclient.touch.v1</string>
+                <string>com.paypal.ppclient.touch.v2</string>
+                <string>org-appextension-feature-password-management</string>
+            </array>
+        </dict>
+    </plist>
+</ios>
+```
+
 Initialize the module by setting the PayPal credentials which you can get from [here](https://developer.paypal.com).
 ```javascript
 var PayPal = require("ti.paypal");
 PayPal.initialize({
     clientIdSandbox: "<YOUR_CLIENT_ID_SANDBOX>",
     clientIdProduction: "<YOUR_CLIENT_ID_PRODUCTION>",
-    environment: PayPal.ENVIRONMENT_SANDBOX // or: ENVIRONMENT_PRODUCTION
+    environment: PayPal.ENVIRONMENT_SANDBOX // or: ENVIRONMENT_PRODUCTION, or: ENVIRONMENT_NO_NETWORK
 });
 ```
 

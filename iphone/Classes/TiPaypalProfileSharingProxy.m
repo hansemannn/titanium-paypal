@@ -47,10 +47,9 @@
 -(void)show:(id)args
 {
     ENSURE_UI_THREAD(show, args);
-    ENSURE_SINGLE_ARG(args, NSArray);
+    ENSURE_SINGLE_ARG_OR_NIL(args, NSArray);
 
-    id animated = [args valueForKey:@"animated"];
-    ENSURE_TYPE_OR_NIL(animated, NSNumber);
+    BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
 
     if ([[self scopes] count] == 0) {
         NSLog(@"[ERROR] Ti.PayPal: Cannot request profile sharing without `scopes` defined, aborting!");
@@ -60,7 +59,7 @@
     [self rememberSelf];
 
     [[TiApp app] showModalController:[self profileSharingDialog]
-                            animated:[TiUtils boolValue:animated def:YES]];
+                            animated:animated];
 }
 
 -(void)setScopes:(id)args

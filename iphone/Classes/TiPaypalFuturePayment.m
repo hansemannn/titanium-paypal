@@ -35,15 +35,14 @@
 -(void)show:(id)args
 {
     ENSURE_UI_THREAD(show, args);
-    ENSURE_SINGLE_ARG(args, NSArray);
-
-    id animated = [args valueForKey:@"animated"];
-    ENSURE_TYPE_OR_NIL(animated, NSNumber);
+    ENSURE_SINGLE_ARG_OR_NIL(args, NSArray);
+    
+    BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     
     [self rememberSelf];
 
     [[TiApp app] showModalController:[self futurePaymentDialog]
-                            animated:[TiUtils boolValue:animated def:YES]];
+                            animated:animated];
 }
 
 -(void)setConfiguration:(id)value

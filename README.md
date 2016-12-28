@@ -1,5 +1,5 @@
 # Ti.PayPal
- [![License](http://hans-knoechel.de/shields/shield-license.svg)](./LICENSE)  [![Support](http://hans-knoechel.de/shields/shield-slack.svg)](http://tislack.org)
+[![Build Status](https://travis-ci.org/hansemannn/ti.paypal.svg?branch=master)](https://travis-ci.org/hansemannn/ti.paypal) [![License](http://hans-knoechel.de/shields/shield-license.svg)](./LICENSE)  [![Support](http://hans-knoechel.de/shields/shield-slack.svg)](http://tislack.org)
 
 <img width="976" src="https://abload.de/img/showcase3vronaax58.png">
 

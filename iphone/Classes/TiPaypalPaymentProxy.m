@@ -131,6 +131,12 @@
     [[self payment] setInvoiceNumber:[TiUtils stringValue:value]];
 }
 
+-(void)setPayeeEmail:(id)value
+{
+    ENSURE_TYPE(value, NSString);
+    [[self payment] setPayeeEmail:[TiUtils stringValue:value]];
+}
+
 -(void)setBnCode:(id)value
 {
     ENSURE_TYPE(value, NSString);

@@ -86,6 +86,7 @@ var payment = PayPal.createPayment({
     // Required
     configuration: configuration,
     currencyCode: "USD",
+    payeeEmail: "john@doe.com", // Optional thirdparty receiver
     amount: 23.99, // Has to match the amount of your items if you set them
     shortDescription: "Your shopping trip at FooBar",
     intent: PayPal.PAYMENT_INTENT_SALE, // or: PAYMENT_INTENT_AUTHORIZE, PAYMENT_INTENT_ORDER

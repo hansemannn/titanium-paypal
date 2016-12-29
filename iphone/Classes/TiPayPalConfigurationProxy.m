@@ -13,11 +13,7 @@
 -(PayPalConfiguration *)configuration
 {
     if (configuration == nil) {
-        configuration = [PayPalConfiguration new];
-        
-        // TODO: Map all properties to public API
-        configuration.acceptCreditCards = NO;                
-        configuration.payPalShippingAddressOption = PayPalShippingAddressOptionNone;
+        configuration = [PayPalConfiguration new];        
     }
     
     return configuration;

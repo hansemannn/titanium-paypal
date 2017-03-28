@@ -1,4 +1,5 @@
-# Ti.PayPal
+# PayPal iOS SDK in Appcelerator Titanium
+
 [![Build Status](https://travis-ci.org/hansemannn/titanium-paypal.svg?branch=master)](https://travis-ci.org/hansemannn/titanium-paypal) [![License](http://hans-knoechel.de/shields/shield-license.svg)](./LICENSE) [![Contact](http://hans-knoechel.de/shields/shield-twitter.svg)](http://twitter.com/hansemannnn)
 
 <img width="976" src="https://abload.de/img/showcase3vronaax58.png">

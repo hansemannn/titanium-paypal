@@ -15,9 +15,8 @@ Ti.PayPal is an open-source project to support the PayPal iOS-SDK 2.x in Appcele
 
 ## Requirements
 
-- Titanium Mobile SDK 5.2.0+
-  - iOS 7.1+
-  - Xcode 7+
+- [x] Titanium Mobile SDK 5.2.0+
+- [x] iOS 7.1+
 
 ## Download + Setup
 
@@ -78,23 +77,53 @@ var item1 = PayPal.createPaymentItem({
 });
 
 var configuration = PayPal.createConfiguration({
+    locale: 'en', // Any ISO 639-1
     merchantName: 'John Doe',
     merchantPrivacyPolicyURL: 'https://google.com',
     merchantUserAgreementURL: 'https://google.com',
-    locale: 'en' // Any ISO 639-1
+    defaultUserEmail: 'john@doe.com',
+    defaultUserPhoneNumber: '+1 111 222 333',
+    defaultUserPhoneCountryCode: 'USD',
+    acceptCreditCards: true,
+    alwaysDisplayCurrencyCodes: false
+    disableBlurWhenBackgrounding: false,
+    presentingInPopover: false,
+    forceDefaultsInSandbox: false,
+    sandboxUserPassword: 'paypal_yeeey',
+    sandboxUserPin: '1337',
+    payPalShippingAddressOption: PayPal.PAYPAL_SHIPPING_ADDRESS_OPTION_NONE, // or *_PROVIDED, *_PAYPAL, *_BOTH
+    rememberUser: false,
+    disableShakeAnimations: false
 });
 
 var payment = PayPal.createPayment({
     // Required
-    configuration: configuration,
-    currencyCode: 'USD',
-    payeeEmail: 'john@doe.com', // Optional thirdparty receiver
-    amount: 23.99, // Has to match the amount of your items if you set them
-    shortDescription: 'Your shopping trip at FooBar',
-    intent: PayPal.PAYMENT_INTENT_SALE, // or: PAYMENT_INTENT_AUTHORIZE, PAYMENT_INTENT_ORDER
-    
-    // Optional, you can also just specify the amount
-    items: [ item1 ]
+    configuration: configuration, // Required payment configuration
+    currencyCode: 'USD', // Required currency code (ISO)
+    shortDescription: 'Your shopping trip at FooBar', // Required short description
+    amount: 23.99, // Required amount, has to match the amount of your items if you set them
+
+    items: [ item1 ] // Optional number of items
+    intent: PayPal.PAYMENT_INTENT_SALE, // or PAYMENT_INTENT_AUTHORIZE or PAYMENT_INTENT_ORDER
+    softDescriptor: 'This will appear in the credit card statement', // Optional credit-card statement description
+    custom: 'my_custom_value', // Optional field, e.g. for tracking numbers
+    invoiceNumber: 'IV101', // Optional invoice number
+    payeeEmail: 'test@example.com', // Optional third-party receiver for single payments.
+    bnCode: 'THE_CODE' // Optional Build Notation code ("BN code"), from partnerprogram@paypal.com,
+    shippingAddress: { // Optional shipping address
+        recipientName: 'Tim Travel', // required
+        line1: 'My St. 1337', // required
+        city: 'San Jose', // required
+        line2: 'Apt 3a'
+        state: 'NYC',
+        postalCode: '10001',
+        countryCode: 'US'
+    },
+    paymentDetails: { // Optional payment details
+        subtotal: 0.01,
+        shipping: 23.98,
+        tax: 0.0
+    }
 });
 
 payment.addEventListener('paymentDidCancel', function(e) {
@@ -123,6 +152,7 @@ var configuration = PayPal.createConfiguration({
     merchantPrivacyPolicyURL: 'https://google.com',
     merchantUserAgreementURL: 'https://google.com',
     locale: 'en'
+    // See full configuration above
 });
 
 var payment = PayPal.createFuturePayment({
@@ -163,6 +193,7 @@ var configuration = PayPal.createConfiguration({
     merchantPrivacyPolicyURL: 'https://google.com',
     merchantUserAgreementURL: 'https://google.com',
     locale: 'en'
+    // See full configuration above
 });
 
 var profile = PayPal.createProfileSharing({
